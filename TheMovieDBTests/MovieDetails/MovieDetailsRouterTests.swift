@@ -18,10 +18,12 @@ class MovieDetailsRouterTests: XCTestCase {
     func testRouteToDiscoverCalled() {
         let viewController = MovieDetailsViewController()
         let router = MockMovieDetailsRouter(viewController: viewController)
+        let presenter = MovieDetailsPresenter(output: viewController)
+        let interactor = MovieDetailsInteractor(output: presenter, movieID: 1)
         viewController.router = router
+        viewController.output = interactor
         
         _ = viewController.view
-        
         
         router.gotoUserReviewsExpectation = expectation(description: "testRouteToDiscoverCalled")
         viewController.userReviewsAction(self)

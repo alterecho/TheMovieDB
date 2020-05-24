@@ -18,7 +18,7 @@ class UserReviewsViewTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         let presenter = UserReviewsPresenter(output: self)
-        let apiWorker = UserReviewsAPIWorker()
+        let apiWorker = MockUserReviewsAPIWorker()
         let interactor = UserReviewsInteractor(output: presenter, movieID: 1, apiWorker: apiWorker)
         let vc = UserReviewsViewController()
         vc.output = interactor
@@ -29,7 +29,7 @@ class UserReviewsViewTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testVMUpdateCalledOnUpdate() {
+    func testVMUpdateCalledOnLoad() {
         displayCalledExpectation = expectation(description: "displayCalledExpectation")
         _ = sut?.view
         waitForExpectations(timeout: 2.0)
