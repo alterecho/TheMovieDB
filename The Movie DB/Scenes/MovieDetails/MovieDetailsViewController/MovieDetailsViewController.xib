@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailsViewController" customModule="The_Movie_DB" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionView" destination="5Rh-9a-bVr" id="KGy-PQ-Bdx"/>
+                <outlet property="imageView" destination="5aq-SS-NpM" id="o00-Hh-czM"/>
+                <outlet property="playerView" destination="Cig-FK-bzh" id="DCO-qk-ms2"/>
+                <outlet property="view" destination="Jo9-Jb-ugg" id="vQm-gx-oXT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Jo9-Jb-ugg">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qbJ-yR-1GE">
+                    <rect key="frame" x="0.0" y="44" width="414" height="224"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" placeholderIntrinsicWidth="145" placeholderIntrinsicHeight="224" translatesAutoresizingMaskIntoConstraints="NO" id="5aq-SS-NpM">
+                            <rect key="frame" x="0.0" y="0.0" width="145" height="224"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Cig-FK-bzh" customClass="YTPlayerView">
+                            <rect key="frame" x="153" y="0.0" width="261" height="224"/>
+                            <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Cig-FK-bzh" firstAttribute="width" relation="greaterThanOrEqual" secondItem="qbJ-yR-1GE" secondAttribute="width" multiplier="0.63" id="mhe-RN-LL3"/>
+                    </constraints>
+                </stackView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rh-9a-bVr">
+                    <rect key="frame" x="20" y="268" width="374" height="556"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ino-AI-3T2">
+                    <rect key="frame" x="0.0" y="832" width="414" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="T0a-fS-uC4"/>
+                    </constraints>
+                    <state key="normal" title="User Reviews"/>
+                    <connections>
+                        <action selector="userReviewsAction:" destination="-1" eventType="touchUpInside" id="zaP-Ea-zMW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="Ino-AI-3T2" firstAttribute="leading" secondItem="AhZ-Rl-Zsq" secondAttribute="leading" id="6yu-eG-VPv"/>
+                <constraint firstItem="5Rh-9a-bVr" firstAttribute="leading" secondItem="AhZ-Rl-Zsq" secondAttribute="leading" constant="20" id="G5U-oe-fg7"/>
+                <constraint firstItem="qbJ-yR-1GE" firstAttribute="top" secondItem="AhZ-Rl-Zsq" secondAttribute="top" id="GVG-wE-Pqp"/>
+                <constraint firstItem="qbJ-yR-1GE" firstAttribute="height" secondItem="Jo9-Jb-ugg" secondAttribute="height" multiplier="0.25" id="UVy-Bd-2ZR"/>
+                <constraint firstItem="AhZ-Rl-Zsq" firstAttribute="trailing" secondItem="Ino-AI-3T2" secondAttribute="trailing" id="Yax-Qe-d2S"/>
+                <constraint firstItem="qbJ-yR-1GE" firstAttribute="leading" secondItem="AhZ-Rl-Zsq" secondAttribute="leading" id="aLo-Z6-zWq"/>
+                <constraint firstItem="AhZ-Rl-Zsq" firstAttribute="bottom" secondItem="Ino-AI-3T2" secondAttribute="bottom" id="bAe-dR-pUo"/>
+                <constraint firstItem="5Rh-9a-bVr" firstAttribute="top" secondItem="qbJ-yR-1GE" secondAttribute="bottom" id="dsO-f2-YSX"/>
+                <constraint firstItem="AhZ-Rl-Zsq" firstAttribute="trailing" secondItem="qbJ-yR-1GE" secondAttribute="trailing" id="fRk-tt-7zK"/>
+                <constraint firstItem="AhZ-Rl-Zsq" firstAttribute="trailing" secondItem="5Rh-9a-bVr" secondAttribute="trailing" constant="20" id="kby-4f-8nF"/>
+                <constraint firstItem="Ino-AI-3T2" firstAttribute="top" secondItem="5Rh-9a-bVr" secondAttribute="bottom" constant="8" id="wYw-xj-y4U"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="AhZ-Rl-Zsq"/>
+            <point key="canvasLocation" x="253.62318840579712" y="-484.15178571428567"/>
+        </view>
+    </objects>
+</document>
